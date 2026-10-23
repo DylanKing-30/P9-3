@@ -9,15 +9,14 @@ int romanCharValue(char r);
 int convertRomanToInt(string s);
 
 int main() {
-	cout << romanCharValue('I') << endl;
-	cout << romanCharValue('V') << endl;
-	cout << romanCharValue('X') << endl;
-	cout << romanCharValue('L') << endl;
-	cout << romanCharValue('C') << endl;
-	cout << romanCharValue('D') << endl;
-	cout << romanCharValue('M') << endl;
-
-	cout << convertRomanToInt("X");
+	string input;
+	while (true) {
+		cout << "Enter Roman number or Q to quit: ";
+		getline(cin, input);
+		if (input == "Q") { break; }
+		cout << input << " = " << convertRomanToInt(input) << endl;
+	}
+	return 0;
 }
 
 int convertRomanToInt(string s) {
@@ -59,5 +58,4 @@ int romanCharValue(char r) {
 	else if (r == 'm') {
 		return 1000;
 	}
-	else exit;
 }
